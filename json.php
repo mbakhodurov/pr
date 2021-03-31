@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="shortcut icon" href="/img/1.jpg" type="image/x-icon">
+	<title>Document</title>
+</head>
+<body>
+<?php
+	require ("blocks/header.php");  
+?>
+<div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+</div>
+  <form action="json.php" method="POST">
+	<div class="container mt-2">
+	      <div class="d-flex flex-wrap">
+	      	<div class="col col-lg-3">
+	        <div class="card mb-4 rounded-3 shadow-sm">
+	          <div class="card-header py-3">
+	            <h4 class="my-0 fw-normal">Select option</h4>
+	          </div>
+	          <div class="card-body">
+	            <button type="submit" class="w-100 btn btn-lg btn-outline-primary" name="CSV">CSV</button>
+	            <br>
+	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" name="JSON">JSON</button>
+	            <br>
+	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" name="XML">XML</button>
+	          </div>
+	        </div>
+	      </div>
+	      </div>
+	</div>
+	</form>
+
+<form action="json.php" method="POST">
+	<?php
+		$CSV=$_POST['CSV'];
+		$flag=0;
+		if (isset($CSV)) {
+			for ($i=0; $i < 12; $i++) { 
+				print('&emsp;');
+			}
+			print('<button type="submit" class="btn btn-secondary btn-sm name="CSV1_1">Загрузите файл(CSV)</button>');
+			$csv1=$_POST['CSV1_1'];
+			if (isset($csv1)) {
+				$flag=1;
+			}
+		}
+		if ($flag==1) {
+			print("dsads");
+		}
+		require ("blocks/footer.php"); 
+	?>
+</form>
+</body>
+</html>
