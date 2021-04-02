@@ -8,8 +8,8 @@
       <li><a href="index.php" class="nav-link px-2 link-secondary">Главная</a></li>
       <li><a href="about.php" class="nav-link px-2 link-dark">Обратная связь</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">Api</a></li>
-      <li><a href="json.php" class="nav-link px-2 link-dark">Json&XML&CSV</a></li>
-      <li><a href="#" class="nav-link px-2 link-dark">Сокеты</a></li>
+      <li><a href="csv&json&xml.php" class="nav-link px-2 link-dark">Json&XML&CSV</a></li>
+      <li><a href="parser.php" class="nav-link px-2 link-dark">Парсинг</a></li>
     </ul>
 
     <div class="col-md-3 text-end">

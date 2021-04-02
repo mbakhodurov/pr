@@ -1,64 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-
+	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="shortcut icon" href="/img/1.jpg" type="image/x-icon">
-	<title>Document</title>
 </head>
 <body>
-<?php
-	require ("blocks/header.php");  
-?>
-<div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
-</div>
-  <form action="json.php" method="POST">
-	<div class="container mt-2">
-	      <div class="d-flex flex-wrap">
-	      	<div class="col col-lg-3">
-	        <div class="card mb-4 rounded-3 shadow-sm">
-	          <div class="card-header py-3">
-	            <h4 class="my-0 fw-normal">Select option</h4>
-	          </div>
-	          <div class="card-body">
-	            <button type="submit" class="w-100 btn btn-lg btn-outline-primary" name="CSV">CSV</button>
-	            <br>
-	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" name="JSON">JSON</button>
-	            <br>
-	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" name="XML">XML</button>
-	          </div>
-	        </div>
-	      </div>
-	      </div>
-	</div>
-	</form>
-
-<form action="json.php" method="POST">
-	<?php
-		$CSV=$_POST['CSV'];
-		$flag=0;
-		if (isset($CSV)) {
-			for ($i=0; $i < 12; $i++) { 
-				print('&emsp;');
-			}
-			print('<button type="submit" class="btn btn-secondary btn-sm name="CSV1_1">Загрузите файл(CSV)</button>');
-			$csv1=$_POST['CSV1_1'];
-			if (isset($csv1)) {
-				$flag=1;
-			}
-		}
-		if ($flag==1) {
-			print("dsads");
-		}
-		require ("blocks/footer.php"); 
-	?>
+<form accept="" method="POST" enctype="multipart/form-data">
+	<fieldset>
+		<br>&emsp;&emsp;
+		<input type="file" name="file" accept=".json" class="btn btn-primary btn-sm name="submit">
+		<button type="submit" name="submit">Select</button>
+		<br>
+		&emsp;&emsp;<a href='csv&json&xml.php'>Назад</a>
+	</fieldset>
 </form>
 </body>
+<?php
+	
+	if (isset($_POST['submit'])) {
+		$file=$_FILES['file'];
+		// print_r($file);
+		$filename=$_FILES['file']['tmp_name'];
+		$fileTmpName=$_FILES['file']['name'];
+		$fileSize=$_FILES['file']['size'];
+		$fileError=$_FILES['file']['error'];
+		$fileType=$_FILES['file']['type'];
+
+		print("<pre>");
+		$res=file_get_contents("/home/mbakhodurov/$fileTmpName");
+		print_r($res);
+		// $data=json_decode($res);
+		$data=json_decode($res,true);
+		for ($i=0; $i < 4; $i++) { 
+			print("<br>");
+		}
+		print_r($data);
+		// var_dump($data);
+
+		// print("<br><br>");
+		$jsonData=json_encode($data);
+		// print_r($jsonData);
+		// $file = fopen('s2.json','w+');
+		file_put_contents('/home/mbakhodurov/s2.json', $jsonData);
+	}
+?>
 </html>
