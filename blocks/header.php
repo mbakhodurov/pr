@@ -12,9 +12,16 @@
       <li><a href="parser.php" class="nav-link px-2 link-dark">Парсинг</a></li>
     </ul>
 
-    <div class="col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2">Login</button>
-      <button type="button" class="btn btn-primary">Sign-up</button>
-    </div>
+
+          <div class="col-md-3 text-end">
+              <form action="auth/index1.php" name="login">
+              <button type="submit" class="btn btn-outline-primary me-2">Login</button>
+              <button type="submit" class="btn btn-primary">Sign-up</button>
+              </form>
+          </div>
+
+
   </header>
 </div>
+<?php
+?>

@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="shortcut icon" href="/img/1.jpg" type="image/x-icon">
-</head>
-<body>
 <form accept="" method="POST" enctype="multipart/form-data">
 	<fieldset>
 		<br>&emsp;&emsp;
@@ -16,7 +7,7 @@
 		&emsp;&emsp;<a href='csv&json&xml.php'>Назад</a>
 	</fieldset>
 </form>
-</body>
+
 <?php
 if (isset($_POST['submit'])) {
 	$file=$_FILES['file'];
@@ -110,4 +101,4 @@ if (isset($_POST['submit'])) {
 }
 print("<br>");
 ?>
-</html>
+<!-- </html> -->

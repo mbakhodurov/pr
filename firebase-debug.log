@@ -1,0 +1,144 @@
+[debug] [2021-04-02T23:03:19.673Z] ----------------------------------------------------------------------
+[debug] [2021-04-02T23:03:19.681Z] Command:       /usr/local/bin/firebase /home/mbakhodurov/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init hosting
+[debug] [2021-04-02T23:03:19.682Z] CLI Version:   9.8.0
+[debug] [2021-04-02T23:03:19.683Z] Platform:      linux
+[debug] [2021-04-02T23:03:19.683Z] Node Version:  v12.2.0
+[debug] [2021-04-02T23:03:19.750Z] Time:          Sat Apr 03 2021 02:03:19 GMT+0300 (GMT+03:00)
+[debug] [2021-04-02T23:03:19.750Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-02T23:03:19.792Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-02T23:03:19.792Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /var/www/aaa.com
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-04-02T23:03:48.412Z] ----------------------------------------------------------------------
+[debug] [2021-04-02T23:03:48.413Z] Command:       /usr/local/bin/firebase /home/mbakhodurov/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init hosting
+[debug] [2021-04-02T23:03:48.414Z] CLI Version:   9.8.0
+[debug] [2021-04-02T23:03:48.414Z] Platform:      linux
+[debug] [2021-04-02T23:03:48.414Z] Node Version:  v12.2.0
+[debug] [2021-04-02T23:03:48.414Z] Time:          Sat Apr 03 2021 02:03:48 GMT+0300 (GMT+03:00)
+[debug] [2021-04-02T23:03:48.414Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-02T23:03:48.418Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-02T23:03:48.418Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /var/www/aaa.com
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2021-04-02T23:04:30.018Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-02T23:04:30.020Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-02T23:04:30.495Z] <<< HTTP RESPONSE 200 {"date":"Fri, 02 Apr 2021 23:04:31 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-02T23:04:30.536Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"fist","name":"fist"}
+[debug] [2021-04-02T23:04:31.763Z] <<< HTTP RESPONSE 400 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Fri, 02 Apr 2021 23:04:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=818","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-02T23:04:31.763Z] <<< HTTP RESPONSE BODY {"error":{"code":400,"message":"field [project_id] has issue [project_id must be at least 6 characters long]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id must be at least 6 characters long"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2021-04-02T23:04:32.100Z] FirebaseError: HTTP Error: 400, field [project_id] has issue [project_id must be at least 6 characters long]
+    at module.exports (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:196:13)
+    at Request.EventEmitter.emit (domain.js:471:20)
+    at Request.<anonymous> (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/request/request.js:1154:10)
+    at Request.emit (events.js:196:13)
+    at Request.EventEmitter.emit (domain.js:471:20)
+    at IncomingMessage.<anonymous> (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (events.js:284:20)
+    at IncomingMessage.emit (events.js:201:15)
+    at IncomingMessage.EventEmitter.emit (domain.js:471:20)
+    at endReadableNT (_stream_readable.js:1130:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2021-04-02T23:04:38.852Z] ----------------------------------------------------------------------
+[debug] [2021-04-02T23:04:38.854Z] Command:       /usr/local/bin/firebase /home/mbakhodurov/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init hosting
+[debug] [2021-04-02T23:04:38.854Z] CLI Version:   9.8.0
+[debug] [2021-04-02T23:04:38.854Z] Platform:      linux
+[debug] [2021-04-02T23:04:38.854Z] Node Version:  v12.2.0
+[debug] [2021-04-02T23:04:38.854Z] Time:          Sat Apr 03 2021 02:04:38 GMT+0300 (GMT+03:00)
+[debug] [2021-04-02T23:04:38.854Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-02T23:04:38.858Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-02T23:04:38.859Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /var/www/aaa.com
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2021-04-02T23:04:51.639Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"fist","name":"five"}
+[debug] [2021-04-02T23:04:52.784Z] <<< HTTP RESPONSE 400 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Fri, 02 Apr 2021 23:04:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=833","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-02T23:04:52.784Z] <<< HTTP RESPONSE BODY {"error":{"code":400,"message":"field [project_id] has issue [project_id must be at least 6 characters long]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id must be at least 6 characters long"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2021-04-02T23:04:53.148Z] FirebaseError: HTTP Error: 400, field [project_id] has issue [project_id must be at least 6 characters long]
+    at module.exports (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:196:13)
+    at Request.EventEmitter.emit (domain.js:471:20)
+    at Request.<anonymous> (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/request/request.js:1154:10)
+    at Request.emit (events.js:196:13)
+    at Request.EventEmitter.emit (domain.js:471:20)
+    at IncomingMessage.<anonymous> (/home/mbakhodurov/.cache/firebase/tools/lib/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (events.js:284:20)
+    at IncomingMessage.emit (events.js:201:15)
+    at IncomingMessage.EventEmitter.emit (domain.js:471:20)
+    at endReadableNT (_stream_readable.js:1130:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.

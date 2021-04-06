@@ -40,7 +40,7 @@
 	</div>
 	</form>
 
-<form action="cvs_read.php" method="POST">
+<form action="csv&json&xml.php" method="POST">
 	<?php
 		$flag=0;
 		$CSV=$_POST['CSV'];
@@ -48,11 +48,19 @@
 			for ($i=0; $i < 12; $i++) { 
 				print('&emsp;');
 			}
-			print('<button type="submit" class="btn btn-secondary btn-sm name="CSV1_1">Загрузите файл(CSV)</button>');
-			$csv1=$_POST['CSV1_1'];
-			if (isset($csv1)) {
-				$flag=1;
-			}
+			print('<button type="submit" value="1" class="btn btn-secondary btn-sm" name="CSV1_1">Загрузите файл(CSV)</button>');
+
+			// $csv1=$_POST['CSV1_1'];
+
+			// setcookie("TestCookie", 1, time()+3600);
+
+		}
+		if ($_POST["CSV1_1"]=='1') {
+				// echo "d";
+				// die();
+				print('<button type="submit" value="1" class="btn btn-secondary btn-sm name="CSV1_1">Загрузите файл(CSV)</button>');
+				include 'cvs_read.php';
+
 		}
 print("</form>");
 print('<form action="json.php" method="POST">');
