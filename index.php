@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,13 @@
 
     <div class="col-md-3 text-end">
         <form action="auth/index1.php" name="login">
-            <button type="submit" class="btn btn-outline-primary me-2">Login</button>
+            <?php if($_SESSION['user']['name']): ?>
+                <button type="button" class="btn btn-outline-primary me-2">
+                    <?=$_SESSION['user']['name']?>
+                </button>
+            <?php else: ?>
+            <button type="submit" class="btn btn-outline-primary me-2">Sign-in</button>
+            <?php endif; ?>
             <button type="submit" class="btn btn-primary">Sign-up</button>
         </form>
     </div>

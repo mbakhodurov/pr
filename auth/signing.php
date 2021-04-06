@@ -1,10 +1,10 @@
 <?php
-    session_start();
-    $login=$_POST['login'];
-    $password= md5($_POST['password']);
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+    session_start();
+    $login=$_POST['login'];
+    $password= md5($_POST['password']);
     $conn=new SQLite3('../1.db');
     $query="select * from users where login='$login' AND password='$password'";
     $res=$conn->query($query);

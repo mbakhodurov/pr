@@ -11,6 +11,7 @@
     if ($password!='' && ($password===$conpassword)){
         $conn=new SQLite3('/var/www/aaa.com/1.db');
         $password=md5($password);
+
         if ($conn->exec("INSERT or IGNORE INTO users('name','login','email','password') VALUES ('$fio','$login','$email', '$password')")
         ){
             $conn->close();
