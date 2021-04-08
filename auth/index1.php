@@ -3,6 +3,9 @@
     if ($_SESSION['user']){
         header('LOCATION:profile.php');
     }
+    $_SESSION['$a'] = mt_rand(1, 9);
+    $_SESSION['$b'] = mt_rand(1, 9);
+
 ?>
 
 <!DOCTYPE html>
@@ -41,15 +44,21 @@
                 <br>
                 <label>Пароль</label><br>
                 <input type="password" name="password" placeholder="Введите пароль">
-                        <input type="submit" name="send" class="btn btn-success btn-sm">
+                <br>
+                <label>Капча <?php echo ($_SESSION['$a'].'+'.$_SESSION['$b'])?></label><br>
+                <input type="text" placeholder="Введите ответ" name="captcha">
+                <input type="submit" name="send" class="btn btn-success btn-sm">
                 <p>
-                    У вас нет аккаунта? - <a href="register.php">Зарегистрируйтесь</a>
+                    У вас нет аккаунта? - <a href="register.php">Зарегистрируйтесь</a><br>
+                    Забыли пароль? - <a href="../reset/reset.php">Восстановление пароля</a>
                 </p>
                 <?php
                 if ($_SESSION['message']){
                     echo $_SESSION['message'];
+                    echo $_SESSION['capcha'];
                 }
                 unset($_SESSION['message']);
+                unset($_SESSION['capcha']);
                 ?>
             </fieldset>
         </div>

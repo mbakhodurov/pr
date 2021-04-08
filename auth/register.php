@@ -3,6 +3,7 @@
 if ($_SESSION['user']){
     header('LOCATION:profile.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +32,11 @@ if ($_SESSION['user']){
         </ul>
     </header>
     <!--</div>-->
+<!--    //capcha-->
+    <?php
+        $_SESSION['$a']=mt_rand(1,9);
+        $_SESSION['$b']=mt_rand(1,9);
+    ?>
 
     <form action="signup.php" method="POST" enctype="multipart/form-data">
         <div class="container mt-5">
@@ -45,11 +51,17 @@ if ($_SESSION['user']){
                 <label>Почта</label><br>
                 <input type="email" placeholder="Введите свою почту" name="email">
                 <br>
+                <label>Фотка в вашем профиле</label><br>
+                <input type="file" name="foto">
+                <br>
                 <label>Пароль</label><br>
                 <input type="password" placeholder="Введите пароль" name="password">
                 <br>
                 <label>Подтверждение пароля</label><br>
                 <input type="password" placeholder="Подтверждение пароля" name="password_confirm">
+                <br>
+                <label>Капча <?php echo ('('.$_SESSION['$a'].'+'.$_SESSION['$b'].')')?></label><br>
+                <input type="text" placeholder="Введите ответ" name="captcha">
                 <br>
                 <p><input type="submit" name="send" class="btn btn-success btn-sm" value="Войти"></p>
                 <p><small>
@@ -59,8 +71,10 @@ if ($_SESSION['user']){
                 <?php
                     if ($_SESSION['message']){
                         echo $_SESSION['message'];
+                        echo $_SESSION['capcha'];
                     }
                    unset($_SESSION['message']);
+                    unset($_SESSION['capcha']);
                 ?>
             </fieldset>
         </div>

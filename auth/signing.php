@@ -1,8 +1,13 @@
 <?php
+    session_start();
+
+    $capcha=$_POST['captcha'];
+    $_SESSION['result']=$_SESSION['$a']+$_SESSION['$b'];
+    $_SESSION['capcha']=$capcha;
+
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    session_start();
     $login=$_POST['login'];
     $password= md5($_POST['password']);
     $conn=new SQLite3('../1.db');
@@ -12,7 +17,7 @@
     while($row=$res->fetchArray()){
            $kol++;
     }
-    if ($kol>0){
+    if ($kol>0 && ($_SESSION['capcha']==$_SESSION['result'])){
         while($row=$res->fetchArray()){
             $_SESSION['user']=[
                 "id"=>$row['id'],
@@ -26,7 +31,7 @@
         }
             $conn->close();
     }else{
-        $_SESSION['message']='Неверный логин или пароль';
+        $_SESSION['message']='Неверный логин/пароль или неправильно ввели каптчу';
         header('Location:index1.php');
     }
 
