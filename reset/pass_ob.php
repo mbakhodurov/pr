@@ -62,7 +62,7 @@ error_reporting(E_ALL);
                 $email=$_POST['email'];
                 $code=$_POST['code'];
                 $new_password=$_POST['password'];
-                $new_password1=md5($new_password);
+                $new_password1=($new_password);
                 $conn = new SQLite3('../1.db');
 //                $query = "SELECT id from users WHERE email='$email' AND code='$code'";
 //                $res = $conn->query($query);

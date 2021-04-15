@@ -31,7 +31,7 @@ if ($_SESSION['user']){
             <li><a href="../parser.php" class="nav-link px-2 link-dark">Парсинг</a></li>
         </ul>
     </header>
-    <!--</div>-->
+    </div>
 <!--    //capcha-->
     <?php
         $_SESSION['$a']=mt_rand(1,9);
@@ -66,7 +66,6 @@ if ($_SESSION['user']){
                 <p><input type="submit" name="send" class="btn btn-success btn-sm" value="Войти"></p>
                 <p><small>
                     У вас есть аккаунт? - <a href="index1.php"></small>Войдите</a>
-
                 </p>
                 <?php
                     if ($_SESSION['message']){

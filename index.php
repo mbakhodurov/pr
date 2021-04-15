@@ -24,7 +24,7 @@
     </ul>
 
     <div class="col-md-3 text-end">
-        <form action="auth/index1.php" name="login">
+        <form action="auth/index1.php" name="login" method="POST">
             <?php if($_SESSION['user']['name']): ?>
                 <button type="button" class="btn btn-outline-primary me-2">
                     <?=$_SESSION['user']['name']?>

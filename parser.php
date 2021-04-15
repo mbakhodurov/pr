@@ -1,25 +1,22 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//openweathermap.org/data/2.5/weather?q=London&appid
+    $url = 'http://api.openweathermap.org/data/2.5/weather';
+    $options=array(
+        'q' => 'Kazan',
+        'APPID' => '10a0e0fa6060038947c98d81cfcbf2d6',
+        'unit' => 'metric',
+        'lang' => 'ru',
+    );
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch,CURLOPT_URL,$url.'?'.http_build_query($options));
 
-// $sql = "SELECT * FROM users";
-// $db = new SQLite3('/var/www/aaa.com/1.db');
-// $result = $db->query($sql);
-// $data = $result->fetchArray(SQLITE3_ASSOC);
-// print_r($data);
+    $response=curl_exec($ch);
+    $data=json_decode($response,true);
+    curl_close($ch);
 
-//$conn=new SQLite3('/var/www/aaa.com/1.db');
-//$conn->exec("INSERT INTO foo(id,bar) VALUES (2,'54321')");
+    echo "<pre>";
+    print_r($data);
 
-//$conn->exec(" DROP TABLE foo");
 
-//$conn->exec("INSERT INTO feedback(name,mail,text) VALUES ('fdsa','1@mail.ru','dsadsasdf')");
-
-//$conn=new SQLite3('/var/www/aaa.com/1.db');
-//$conn->exec("INSERT INTO users(login,password,status,hash) VALUES ('abcdd','1234',12341234,'54321')");
-//$conn->exec("INSERT INTO users(login,password,status,hash) VALUES ('abcsds','1234',12341234,'54321')");
-//$conn->exec("INSERT INTO users(login,password,status,hash) VALUES ('abcsdss','123334',12341234,'54321')");
-
-//$result = $conn->exec($query);
-//$conn->close();
+?>

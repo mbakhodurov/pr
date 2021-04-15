@@ -56,10 +56,18 @@ error_reporting(E_ALL);
                         $res = $conn->query($query);
                         $kol = 0;
                         while ($row = $res->fetchArray()) {
+                            $kol++;
+                        }
+                        if ($kol>0){
                             print "Вам на почту был выслан код. Проверьте почту и перейдите по <a href='pass_ob.php'> ссылке </a> для  сбрса пароля";
                             $code=mt_rand(10000,99999);
-                            $query = "UPDATE users SET code=$code WHERE email='$email'";
+                            $subject=("Тестовое сообщение");
+                            $headers="From: $email\r\nReply-to: $email\r\nContent-type:text/html";
+                            mail('mbakhodurov@gmail.com', $subject, $code, $headers);
+                            $query = "UPDATE users SET code='$code' WHERE email='$email'";
                             $res = $conn->query($query);
+                        }else{
+                            echo "Такой почты нету";
                         }
                     }
                     ?>
