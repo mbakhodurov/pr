@@ -1,0 +1,95 @@
+body{
+    /*height: 2000px;*/
+}
+
+.carousel-caption{
+    color: orange;
+    /*font-size: 150%;*/
+    font-family: 'Lobster', cursive;
+    font-size: 200%;
+
+    /*height:20%;*/
+
+    /*position: absolute;*/
+    /*z-index: 1;*/
+    /*display:table;*/
+    /*width:100%;*/
+
+}
+
+#about_us{
+    font-size: 150%;
+    font-family: 'Pacifico', cursive;
+}
+.navbar {
+    /*background: rgba(0,0,0,0.4);*/
+    font-family: 'Lobster', cursive;
+    font-size: 130%;
+    position: -webkit-sticky; /* Required for Safari */
+    position: sticky;
+    /*height: 50px;*/
+}
+.p-4{
+    padding: 0;
+}
+.a1{
+    background: #FBF1A2;
+    /*background: rgba(0,0,0,0.4);*/
+    height: 45px;
+    font-family: 'New Tegomin', serif;
+    font-family: 'Pacifico', cursive;
+    color: red;
+    font-size: 18pt;
+}
+.imgs{
+    background-size: 100px 200px;
+}
+.links{
+    color:bisque;
+}
+/*A:link { color: blue; text-decoration: none; }*/
+
+A:hover { color: yellow; text-decoration: underline; }
+
+.my-flex-card > div > div.card {
+    height: calc(100% - 15px);
+    margin-bottom: 15px;
+}
+
+.card-text{
+    font-family: 'Lobster', cursive;
+    font-size: 130%;
+}
+
+.m_1{
+    background-color: orange;
+}
+.about{
+    /*height: 900px;*/
+    font-family: 'Pacifico', cursive;
+    font-size: 130%;
+}
+.rr{
+    /*height: 300px;*/
+    /*background-color: #eee;*/
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.rr1{
+    font-size: 20px;
+    /*height: 300px;*/
+    /*background-color: #eee;*/
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+.nav-pills{
+    /*background-color: blue;*/
+    width: 100%;
+}
+
+.con{
+    color: PaleGoldenrod;
+    /*height: 300px;*/
+    font-size: 150%;
+    font-family: 'Pacifico', cursive;
+}

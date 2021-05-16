@@ -6,79 +6,92 @@ if ($_SESSION['user']){
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="/img/1.jpg" type="image/x-icon">
-    <title>Document</title>
-</head>
-<body>
-
-<div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">Обратная связь, json, parsing
-
-        </a>
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="../index.php" class="nav-link px-2 link-secondary">Главная</a></li>
-            <li><a href="../about.php" class="nav-link px-2 link-dark">Обратная связь</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Api</a></li>
-            <li><a href="../csv&json&xml.php" class="nav-link px-2 link-dark">Json&XML&CSV</a></li>
-            <li><a href="../parser.php" class="nav-link px-2 link-dark">Парсинг</a></li>
-        </ul>
-    </header>
-    </div>
+<?php
+include_once "../blocks/header.php";
+?>
 <!--    //capcha-->
     <?php
         $_SESSION['$a']=mt_rand(1,9);
         $_SESSION['$b']=mt_rand(1,9);
     ?>
 
-    <form action="signup.php" method="POST" enctype="multipart/form-data">
-        <div class="container mt-5">
+    <div class="container mt-4 ">
+        <form action="signup.php" method="POST">
             <fieldset class="border p-3">
-                <legend class="w-auto">Регистрация</legend>
-                <label>Введите фамилию и имя</label><br>
-                <input type="text" placeholder="Введите свое полное имя" name="fio">
+                <legend>Регистрация</legend>
+                <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label">Введите фамилию и имя</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="Введите свое полное имя" name="fio">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Логин</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="login" placeholder="Введите свой логин">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Почта</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" placeholder="Введите свою почту" name="email">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Фотка в вашем профиле</label>
+                    <div class="col-sm-10">
+                        <input type="file" name="foto">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Пароль</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" placeholder="Введите пароль" name="password">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Подтверждение пароля</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" placeholder="Подтверждение пароля" name="password_confirm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Капча <font color="red"> <?php echo ('('.$_SESSION['$a'].'+'.$_SESSION['$b'].')')?></label></font>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="captcha" placeholder="Введите ответ">
+                    </div>
+                </div>
                 <br>
-                <label>Логин</label><br>
-                <input type="text" name="login" placeholder="Введите свой логин">
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="submit" name="send" class="btn btn-success btn-sm" value="Войти">
+                    </div>
+                </div>
                 <br>
-                <label>Почта</label><br>
-                <input type="email" placeholder="Введите свою почту" name="email">
-                <br>
-                <label>Фотка в вашем профиле</label><br>
-                <input type="file" name="foto">
-                <br>
-                <label>Пароль</label><br>
-                <input type="password" placeholder="Введите пароль" name="password">
-                <br>
-                <label>Подтверждение пароля</label><br>
-                <input type="password" placeholder="Подтверждение пароля" name="password_confirm">
-                <br>
-                <label>Капча <?php echo ('('.$_SESSION['$a'].'+'.$_SESSION['$b'].')')?></label><br>
-                <input type="text" placeholder="Введите ответ" name="captcha">
-                <br>
-                <p><input type="submit" name="send" class="btn btn-success btn-sm" value="Войти"></p>
                 <p><small>
-                    У вас есть аккаунт? - <a href="index1.php"></small>Войдите</a>
+                        У вас есть аккаунт? - <a href="index1.php"></small>Войдите</a>
                 </p>
                 <?php
                     if ($_SESSION['message']){
-                        echo $_SESSION['message'];
-                        echo $_SESSION['capcha'];
-                    }
-                   unset($_SESSION['message']);
+                    echo $_SESSION['message'];
+                    echo $_SESSION['capcha'];
+                }
+                    unset($_SESSION['message']);
                     unset($_SESSION['capcha']);
                 ?>
             </fieldset>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+
+    <br>
+    <?php
+    require_once ("../blocks/footer.php");
+    ?>
 </body>
 </html>
 

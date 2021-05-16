@@ -10,9 +10,10 @@
     $email=$_POST['email'];
     $password=$_POST['password'];
     $conpassword=$_POST['password_confirm'];
-
-if ($password!='' && ($password==$conpassword) && ($_SESSION['capcha']==$_SESSION['result'])){
-        $conn = new SQLite3('../1.db');
+//echo "dsfafasf";
+if ($password!='' && ($password==$conpassword) && ($_SESSION['capcha']==$_SESSION['result'])) {
+    $conn = new SQLite3('../1.db');
+//    echo "$fio" . " $login" . " $email" . " $password";
 //        $password = md5($password);
 
 //        $path='upload/'.time().$_FILES['foto']['name'];
@@ -24,15 +25,16 @@ if ($password!='' && ($password==$conpassword) && ($_SESSION['capcha']==$_SESSIO
 //        while ($row = $results->fetchArray()) {
 //            var_dump($row);
 //        }
-        if($conn->exec("INSERT INTO users('id','name','login','email','password') VALUES (null,'$fio','$login','$email','$password')")){
-//            echo '111';
-            $conn->close();
-            $_SESSION['message']='Регистрация прошла успешно!';
-            header('LOCATION:index1.php');
-        }
-            }else{
-        //        echo '2222';
-                $_SESSION['message']='Пароли не совпадают или неправильно ввели каптчу';
-                header('Location:register.php');
+    if ($conn->exec("INSERT INTO users('id','name','login','email','password') VALUES (null,'$fio','$login','$email','$password')")) {
+        echo '111';
+        $conn->close();
+        $_SESSION['message'] = 'Регистрация прошла успешно!';
+        header('LOCATION:index1.php');
     }
+}else {
+        //        echo '2222';
+        $_SESSION['message'] = 'Пароли не совпадают или неправильно ввели каптчу';
+        header('Location:register.php');
+    }
+
 ?>

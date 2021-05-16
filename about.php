@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="/img/1.jpg" type="image/x-icon">
-    <title>Document</title>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <link rel="stylesheet" type="text/css" href="css/style.css">-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--    <link rel="shortcut icon" href="/img/1.jpg" type="image/x-icon">-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+<!--<body>-->
 <?php
-require ("blocks/header.php");
+//require ("blocks/header.php");
 if (isset($_POST['send'])) {
     $name=$_POST['name'];
     $mail=$_POST['mail'];
@@ -33,21 +33,42 @@ if (isset($_POST['send'])) {
 
 }
 ?>
+
 <form action="" method="post">
-    <div class="container mt-5">
-        <fieldset>
-            <legend>Контактная информация</legend>
-            <input type="text" name="name" placeholder="Введите имя">
-            <span style="color: red"><?php print($error_name); ?></span>
-            <br><br>
-            <input type="email" name="mail" placeholder="Введите email"><span style="color: red"><?php print($error_email) ?></span>
-            <br><br>
-            <textarea name="message" class="form-control" placeholder="Введите ваше сообщение" rows="2%" cols="-4"></textarea><span style="color: red"><?=$error_message?></span>
-            <br>
-            <input type="submit" name="send" class="btn btn-success">
-        </fieldset>
+    <div class="form-group">
+        <label for="name">Ваше имя:</label>
+        <input type="name" name="name" class="form-control" id="name" placeholder="Name">
+        <span style="color: red"><?php print($error_name); ?></span>
     </div>
+    <br>
+    <div class="form-group">
+        <label for="email1">E-mail:</label>
+        <input type="email" name="mail" class="form-control" id="email1" placeholder="Email"><span style="color: red"><?php print($error_email) ?></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="message">Сообщение:</label>
+        <textarea class="form-control" name="message" rows="3"></textarea><span style="color: red"><?=$error_message?></span>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-info" name="send">Отправить сообщение</button>
 </form>
+
+<!--<form action="" method="post">-->
+<!--    <div class="container mt-5">-->
+<!--        <fieldset>-->
+<!--            <legend>Контактная информация</legend>-->
+<!--            <input type="text" name="name" placeholder="Введите имя">-->
+<!--            <span style="color: red">--><?php //print($error_name); ?><!--</span>-->
+<!--            <br><br>-->
+<!--            <input type="email" name="mail" placeholder="Введите email"><span style="color: red">--><?php //print($error_email) ?><!--</span>-->
+<!--            <br><br>-->
+<!--            <textarea name="message" class="form-control" placeholder="Введите ваше сообщение" rows="2%" cols="-4"></textarea><span style="color: red">--><?//=$error_message?><!--</span>-->
+<!--            <br>-->
+<!--            <input type="submit" name="send" class="btn btn-success">-->
+<!--        </fieldset>-->
+<!--    </div>-->
+<!--</form>-->
 <?php
 $name=$_POST['name'];
 $mail=$_POST['mail'];
@@ -66,7 +87,5 @@ if (isset($_POST['send'])) {
         echo "222";
     }
 }
-require ("blocks/footer.php");
+
 ?>
-</body>
-</html>
